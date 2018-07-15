@@ -14,14 +14,15 @@ Summary: IPython extension that help to use Fortran in the interactive session
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/fortran-magic-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/fortran-magic-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/fortran-magic-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/fortran-magic-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/fortran-magic-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/fortran-magic-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/fortran-magic-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/fortran-magic-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/fortran-magic/badges/version.svg)](https://anaconda.org/conda-forge/fortran-magic)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/fortran-magic/badges/downloads.svg)](https://anaconda.org/conda-forge/fortran-magic)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-fortran--magic-green.svg)](https://anaconda.org/conda-forge/fortran-magic) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/fortran-magic.svg)](https://anaconda.org/conda-forge/fortran-magic) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/fortran-magic.svg)](https://anaconda.org/conda-forge/fortran-magic) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/fortran-magic.svg)](https://anaconda.org/conda-forge/fortran-magic) |
 
 Installing fortran-magic
 ========================
@@ -66,6 +67,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
