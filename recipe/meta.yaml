@@ -1,36 +1,37 @@
 {% set version = "0.7" %}
 
 package:
-    name: fortran-magic
-    version: {{ version }}
+  name: fortran-magic
+  version: {{ version }}
 
 source:
-    fn: fortran-magic-{{ version }}.tar.gz
-    url: https://pypi.python.org/packages/source/f/fortran-magic/fortran-magic-{{ version }}.tar.gz
-    md5: dc57d9c5daa0e16f6ce315045481b63e
+  url: https://pypi.io/packages/source/f/fortran-magic/fortran-magic-{{ version }}.tar.gz
+  sha256: 825a21df6c1d32ee80127e6fcb3cbbeaff1cc103be1ea6f3855fc52b80ccdac0
 
 build:
-    number: 1
-    script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 1001
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
 requirements:
-    build:
-        - python
-        - setuptools
-    run:
-        - python
-        - numpy
-        - notebook
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - numpy
+    - notebook
 
 test:
-    imports:
-        - fortranmagic
+  imports:
+    - fortranmagic
 
 about:
-    home: https://github.com/mgaitan/fortran_magic
-    license: BSD-3-Clause
-    summary: IPython extension that help to use Fortran in the interactive session
+  home: https://github.com/mgaitan/fortran_magic
+  license: BSD-3-Clause
+  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  summary: IPython extension that help to use Fortran in the interactive session
 
 extra:
-    recipe-maintainers:
-        - ocefpaf
+  recipe-maintainers:
+    - ocefpaf
