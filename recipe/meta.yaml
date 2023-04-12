@@ -1,4 +1,4 @@
-{% set version = "0.7" %}
+{% set version = "0.7.1" %}
 
 package:
   name: fortran-magic
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/f/fortran-magic/fortran-magic-{{ version }}.tar.gz
-  sha256: 825a21df6c1d32ee80127e6fcb3cbbeaff1cc103be1ea6f3855fc52b80ccdac0
+  sha256: ddf9573231bb3bba7f3759277505e7c9587e757a51f4d7fb5fec2d572add7f52
 
 build:
-  number: 1001
+  number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
 requirements:
   host:
@@ -29,7 +29,7 @@ test:
 about:
   home: https://github.com/mgaitan/fortran_magic
   license: BSD-3-Clause
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE
   summary: IPython extension that help to use Fortran in the interactive session
 
 extra:
