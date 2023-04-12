@@ -7,7 +7,7 @@ Home: https://github.com/mgaitan/fortran_magic
 
 Package license: BSD-3-Clause
 
-Summary: IPython extension that help to use Fortran in the interactive session
+Summary: An extension for IPython that help to use Fortran in your interactive session.
 
 Current build status
 ====================
