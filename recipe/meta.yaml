@@ -1,36 +1,41 @@
-{% set version = "0.7" %}
+{% set name = "fortran-magic" %}
+{% set version = "0.7.1" %}
 
 package:
-  name: fortran-magic
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/f/fortran-magic/fortran-magic-{{ version }}.tar.gz
-  sha256: 825a21df6c1d32ee80127e6fcb3cbbeaff1cc103be1ea6f3855fc52b80ccdac0
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fortran-magic-{{ version }}.tar.gz
+  sha256: ddf9573231bb3bba7f3759277505e7c9587e757a51f4d7fb5fec2d572add7f52
 
 build:
-  number: 1001
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
+    - ipython
     - numpy
-    - notebook
 
 test:
   imports:
     - fortranmagic
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/mgaitan/fortran_magic
+  summary: An extension for IPython that help to use Fortran in your interactive session.
   license: BSD-3-Clause
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
-  summary: IPython extension that help to use Fortran in the interactive session
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
