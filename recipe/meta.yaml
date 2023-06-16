@@ -1,5 +1,5 @@
 {% set name = "fortran-magic" %}
-{% set version = "0.7.1" %}
+{% set version = "0.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fortran-magic-{{ version }}.tar.gz
-  sha256: ddf9573231bb3bba7f3759277505e7c9587e757a51f4d7fb5fec2d572add7f52
+  sha256: d5dcdbbc930cd47c3fadaf34775d25934014c7adfd86392a2dfccfec663b8ac5
 
 build:
   noarch: python
