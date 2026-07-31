@@ -1,5 +1,5 @@
 {% set name = "fortran-magic" %}
-{% set version = "0.9" %}
+{% set version = "1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fortran_magic-{{ version }}.tar.gz
-  sha256: 718e32a16c9fb191f08333288b80916bbb83f4d26d98532e55d0b38a797607ac
+  sha256: a34ef0a0bc535bd45c7afb7ba027f74b156bf0ed8abf5f7c11d01fe185591520
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -20,6 +20,8 @@ requirements:
     - setuptools
     - pip
   run:
+    - meson
+    - ninja
     - python >={{ python_min }}
     - ipython
     - numpy
