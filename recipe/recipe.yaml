@@ -1,0 +1,51 @@
+schema_version: 1
+
+context:
+  version: "1.0"
+
+package:
+  name: fortran-magic
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/f/fortran-magic/fortran_magic-${{ version }}.tar.gz
+  sha256: a34ef0a0bc535bd45c7afb7ba027f74b156bf0ed8abf5f7c11d01fe185591520
+  patches:
+    - remove_repackage_pypi_dep.patch
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling >=1.24
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - ipython
+    - numpy
+    - meson
+    - ninja
+
+tests:
+  - python:
+      imports:
+        - fortranmagic
+      pip_check: false
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: An IPython extension for compiling and using Fortran code interactively.
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://github.com/mgaitan/fortran_magic
+  documentation: https://nbviewer.org/github/mgaitan/fortran_magic/blob/master/documentation.ipynb
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
